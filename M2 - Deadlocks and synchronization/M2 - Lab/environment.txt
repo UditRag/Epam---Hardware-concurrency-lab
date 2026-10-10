@@ -1,0 +1,5 @@
+Module: 02 - Deadlocks and Synchronization
+Java: Temurin OpenJDK 17.0.18
+Operating System: Windows
+Build System: Maven project
+Maven CLI: Not available in current environment
