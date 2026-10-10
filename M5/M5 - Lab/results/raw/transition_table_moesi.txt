@@ -1,0 +1,26 @@
+
+=== Transition table [MOESI] (derived from SnoopingBus) ===
+Side       Cur  Event              Bus action (observed)                    Next
+----------------------------------------------------------------------------------
+Processor  M    PrRd               None (hit)                               M   
+Processor  M    PrWr               None (hit)                               M   
+Processor  O    PrRd               None (hit)                               O   
+Processor  O    PrWr               BusUpgr; others invalidate               M   
+Processor  E    PrRd               None (hit)                               E   
+Processor  E    PrWr               None (hit, silent E to M)                M   
+Processor  S    PrRd               None (hit)                               S   
+Processor  S    PrWr               BusUpgr; others invalidate               M   
+Processor  I    PrRd               BusRd; no sharer answers                 E   
+Processor  I    PrWr               BusRdX                                   M   
+Snoop      M    BusRd seen         BusRd; C0 flushes, stays dirty owner     O   
+Snoop      M    BusRdX seen        BusRdX; C0 flushes + invalidates         I   
+Snoop      O    BusRd seen         BusRd; C0 (owner) supplies               O   
+Snoop      O    BusRdX seen        BusRdX; C0 flushes + invalidates         I   
+Snoop      O    BusUpgr seen       BusUpgr; others invalidate               I   
+Snoop      E    BusRd seen         BusRd; sharer signals shared             S   
+Snoop      E    BusRdX seen        BusRdX                                   I   
+Snoop      S    BusRd seen         BusRd; sharer signals shared             S   
+Snoop      S    BusRdX seen        BusRdX                                   I   
+Snoop      S    BusUpgr seen       BusUpgr; others invalidate               I   
+Snoop      I    BusRd seen         BusRd; no sharer answers                 I   
+Snoop      I    BusRdX seen        BusRdX                                   I   

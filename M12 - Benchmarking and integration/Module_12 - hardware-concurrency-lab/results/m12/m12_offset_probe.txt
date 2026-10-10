@@ -1,0 +1,45 @@
+﻿java.vm=Java HotSpot(TM) 64-Bit Server VM 27+35-2325 os=Windows 11 amd64 args=[]
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by io.lnctqubit.hwconc.m12.tools.OffsetProbe (file:/C:/Users/udrag/Desktop/Module12_hardware-concurrency-lab/hardware-concurrency-lab/target/classes/)
+WARNING: Please consider reporting this to the maintainers of class io.lnctqubit.hwconc.m12.tools.OffsetProbe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+--- SpscRingBuffer (fields sorted by actual offset) ---
+  off=  8  long     producerSequence
+  off= 16  long     consumerSequence
+  off= 24  int      mask
+  off= 28  Object[] entries
+  producerSequence<->consumerSequence distance = 8 bytes -> <64: may share a cache line
+--- PaddedSpscRingBuffer (fields sorted by actual offset) ---
+  off=  8  long     p1
+  off= 16  long     p2
+  off= 24  long     p3
+  off= 32  long     p4
+  off= 40  long     p5
+  off= 48  long     p6
+  off= 56  long     p7
+  off= 64  long     producerSequence
+  off= 72  long     q1
+  off= 80  long     q2
+  off= 88  long     q3
+  off= 96  long     q4
+  off=104  long     q5
+  off=112  long     q6
+  off=120  long     q7
+  off=128  long     c1
+  off=136  long     c2
+  off=144  long     c3
+  off=152  long     c4
+  off=160  long     c5
+  off=168  long     c6
+  off=176  long     c7
+  off=184  long     consumerSequence
+  off=192  long     r1
+  off=200  long     r2
+  off=208  long     r3
+  off=216  long     r4
+  off=224  long     r5
+  off=232  long     r6
+  off=240  long     r7
+  off=248  int      mask
+  off=252  Object[] entries
+  producerSequence<->consumerSequence distance = 120 bytes -> >=64: guaranteed different 64B lines (if line size is 64)

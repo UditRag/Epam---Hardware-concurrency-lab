@@ -1,0 +1,2 @@
+AtomicReference CAS(A->C) after A->B->A: true  (ABA missed)
+AtomicStampedReference CAS((A,1)->(C,2)) after A->B->A: false  (stale stamp rejected; current stamp=3)

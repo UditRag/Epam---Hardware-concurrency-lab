@@ -1,0 +1,1 @@
+run_id,date,jdk_vendor_version,jmh_version,cpu_model,os_version,jvm_args,benchmark,array_size_ints,working_set_bytes,access_pattern,logical_reads_per_invocation,jmh_mode,jmh_score,jmh_unit,ns_per_logical_read_or_hop,score_error_99_9_ci,fork_mean_min,fork_mean_max,forks,warmup_iterations,measurement_iterations,actual_result,interpretation,limitations

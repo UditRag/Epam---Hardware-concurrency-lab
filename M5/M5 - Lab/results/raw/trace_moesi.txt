@@ -1,0 +1,25 @@
+Snooping-bus teaching model, 1 cache line, 2 cores (THEORETICAL, not hardware output)
+
+=== Trace 1: read-only sharing (both start in I)  [MOESI] ===
+Step  Event                  Bus traffic                              C0   C1  
+--------------------------------------------------------------------------------
+1     C0 reads x             BusRd; no sharer answers                 E    I   
+2     C1 reads x             BusRd; sharer signals shared             S    S   
+3     Both read x again      None (hit)                               S    S   
+
+=== Trace 2: C0 writes after both read (both start in S)  [MOESI] ===
+Step  Event                  Bus traffic                              C0   C1  
+--------------------------------------------------------------------------------
+1     C0 executes x = 1      BusUpgr; others invalidate               M    I   
+2     C1 later reads x       BusRd; C0 flushes, stays dirty owner     O    S   
+3     C1 reads x again       None (hit)                               O    S   
+
+=== Trace 3: competing writers (ownership ping-pong)  [MOESI] ===
+Step  Event                  Bus traffic                              C0   C1  
+--------------------------------------------------------------------------------
+1     C0 writes x            BusRdX                                   M    I   
+2     C1 writes x            BusRdX; C0 flushes + invalidates         I    M   
+3     C0 writes x again      BusRdX; C1 flushes + invalidates         M    I   
+4     C1 writes x again      BusRdX; C0 flushes + invalidates         I    M   
+
+Key difference: Trace 2 step 2 -> MESI gives C0=S, MOESI gives C0=O.

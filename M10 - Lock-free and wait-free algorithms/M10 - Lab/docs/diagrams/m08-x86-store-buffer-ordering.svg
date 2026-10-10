@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <title>Module 08: ILLUSTRATIVE store-buffer view of the store-buffering litmus test on Intel 64</title>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>
+  <rect width="820" height="470" fill="#fff"/>
+  <text x="410" y="24" text-anchor="middle" font-size="16" font-weight="bold">ILLUSTRATIVE ONLY - simplified model, not an observed trace</text>
+  <text x="410" y="44" text-anchor="middle" fill="#a40000">Explains why r1 == 0 and r2 == 0 is permitted by Intel 64 memory ordering for the plain version</text>
+  <rect x="30" y="70" width="230" height="200" fill="#eef3fb" stroke="#333"/><text x="145" y="92" text-anchor="middle" font-weight="bold">Logical processor 0</text>
+  <text x="45" y="118">1. store  x = 1</text><text x="45" y="140">2. load   r1 = y</text>
+  <rect x="45" y="160" width="200" height="40" fill="#fdecc8" stroke="#333"/><text x="145" y="185" text-anchor="middle">store buffer: [x = 1]</text>
+  <text x="45" y="230" fill="#555">load of y may complete while</text><text x="45" y="248" fill="#555">x = 1 is still only in the buffer</text>
+  <rect x="560" y="70" width="230" height="200" fill="#eef3fb" stroke="#333"/><text x="675" y="92" text-anchor="middle" font-weight="bold">Logical processor 1</text>
+  <text x="575" y="118">1. store  y = 1</text><text x="575" y="140">2. load   r2 = x</text>
+  <rect x="575" y="160" width="200" height="40" fill="#fdecc8" stroke="#333"/><text x="675" y="185" text-anchor="middle">store buffer: [y = 1]</text>
+  <text x="575" y="230" fill="#555">load of x may complete while</text><text x="575" y="248" fill="#555">y = 1 is still only in the buffer</text>
+  <rect x="290" y="300" width="240" height="70" fill="#e9f5ec" stroke="#333"/><text x="410" y="326" text-anchor="middle" font-weight="bold">Coherent cache / memory</text><text x="410" y="348" text-anchor="middle">x == 0, y == 0 (neither store visible yet)</text>
+  <line x1="145" y1="200" x2="300" y2="300" stroke="#333" stroke-dasharray="6,4" marker-end="url(#a)"/><text x="130" y="296" fill="#555">drains later</text>
+  <line x1="675" y1="200" x2="520" y2="300" stroke="#333" stroke-dasharray="6,4" marker-end="url(#a)"/><text x="620" y="296" fill="#555">drains later</text>
+  <line x1="290" y1="352" x2="145" y2="258" stroke="#1a7f37" stroke-width="2" marker-end="url(#a)"/><text x="165" y="318" fill="#1a7f37">load y reads 0</text>
+  <line x1="530" y1="352" x2="675" y2="258" stroke="#1a7f37" stroke-width="2" marker-end="url(#a)"/><text x="590" y="318" fill="#1a7f37">load x reads 0</text>
+  <rect x="30" y="392" width="760" height="64" fill="#fff4f4" stroke="#a40000"/>
+  <text x="40" y="412">Result (r1, r2) = (0, 0). Intel SDM Vol. 3A memory-ordering chapter lists this as allowed (loads may pass earlier stores to DIFFERENT locations).</text>
+  <text x="40" y="432">A fence/locked instruction between the store and the load on each processor removes this outcome (SDM: MFENCE / locked instructions, section 8.2.5).</text>
+  <text x="40" y="450" fill="#555">Store-buffer contents, drain timing and cache steps here are teaching simplifications. Java code cannot observe them. See docs/module08 section D.</text>
+</svg>

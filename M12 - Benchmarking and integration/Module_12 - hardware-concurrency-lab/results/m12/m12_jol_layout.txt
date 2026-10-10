@@ -1,0 +1,67 @@
+﻿# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. sun.jvm.hotspot.runtime.VM.isCompressedKlassPointersEnabled()
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by org.openjdk.jol.vm.HotspotUnsafe (file:/C:/Users/udrag/Desktop/Module12_hardware-concurrency-lab/hardware-concurrency-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jol.vm.HotspotUnsafe
+WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+# VM mode: 64 bits
+# Lilliput VM detected (experimental)
+# Compressed references (oops): 3-bit shift
+# Compressed class pointers: 3-bit shift
+# WARNING | Compressed references base/shifts are guessed by the experiment!
+# WARNING | Therefore, computed addresses are just guesses, and ARE NOT RELIABLE.
+# WARNING | Make sure to attach Serviceability Agent to get the reliable addresses.
+# Object alignment: 8 bytes
+#                       ref, bool, byte, char, shrt,  int,  flt,  lng,  dbl
+# Field sizes:            4,    1,    1,    2,    2,    4,    4,    8,    8
+# Array element sizes:    4,    1,    1,    2,    2,    4,    4,    8,    8
+# Array base offsets:    12,   12,   12,   12,   12,   12,   12,   16,   16
+
+io.lnctqubit.hwconc.m11.SpscRingBuffer object internals:
+OFF  SZ                 TYPE DESCRIPTION                       VALUE
+  0   8                      (object header: mark)             N/A
+  8   8                 long SpscRingBuffer.producerSequence   N/A
+ 16   8                 long SpscRingBuffer.consumerSequence   N/A
+ 24   4                  int SpscRingBuffer.mask               N/A
+ 28   4   java.lang.Object[] SpscRingBuffer.entries            N/A
+Instance size: 32 bytes
+Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
+
+io.lnctqubit.hwconc.m11.PaddedSpscRingBuffer object internals:
+OFF  SZ                 TYPE DESCRIPTION                             VALUE
+  0   8                      (object header: mark)                   N/A
+  8   8                 long PaddedSpscRingBuffer.p1                 N/A
+ 16   8                 long PaddedSpscRingBuffer.p2                 N/A
+ 24   8                 long PaddedSpscRingBuffer.p3                 N/A
+ 32   8                 long PaddedSpscRingBuffer.p4                 N/A
+ 40   8                 long PaddedSpscRingBuffer.p5                 N/A
+ 48   8                 long PaddedSpscRingBuffer.p6                 N/A
+ 56   8                 long PaddedSpscRingBuffer.p7                 N/A
+ 64   8                 long PaddedSpscRingBuffer.producerSequence   N/A
+ 72   8                 long PaddedSpscRingBuffer.q1                 N/A
+ 80   8                 long PaddedSpscRingBuffer.q2                 N/A
+ 88   8                 long PaddedSpscRingBuffer.q3                 N/A
+ 96   8                 long PaddedSpscRingBuffer.q4                 N/A
+104   8                 long PaddedSpscRingBuffer.q5                 N/A
+112   8                 long PaddedSpscRingBuffer.q6                 N/A
+120   8                 long PaddedSpscRingBuffer.q7                 N/A
+128   8                 long PaddedSpscRingBuffer.c1                 N/A
+136   8                 long PaddedSpscRingBuffer.c2                 N/A
+144   8                 long PaddedSpscRingBuffer.c3                 N/A
+152   8                 long PaddedSpscRingBuffer.c4                 N/A
+160   8                 long PaddedSpscRingBuffer.c5                 N/A
+168   8                 long PaddedSpscRingBuffer.c6                 N/A
+176   8                 long PaddedSpscRingBuffer.c7                 N/A
+184   8                 long PaddedSpscRingBuffer.consumerSequence   N/A
+192   8                 long PaddedSpscRingBuffer.r1                 N/A
+200   8                 long PaddedSpscRingBuffer.r2                 N/A
+208   8                 long PaddedSpscRingBuffer.r3                 N/A
+216   8                 long PaddedSpscRingBuffer.r4                 N/A
+224   8                 long PaddedSpscRingBuffer.r5                 N/A
+232   8                 long PaddedSpscRingBuffer.r6                 N/A
+240   8                 long PaddedSpscRingBuffer.r7                 N/A
+248   4                  int PaddedSpscRingBuffer.mask               N/A
+252   4   java.lang.Object[] PaddedSpscRingBuffer.entries            N/A
+Instance size: 256 bytes
+Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
+

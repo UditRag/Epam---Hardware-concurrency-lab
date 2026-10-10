@@ -1,0 +1,9 @@
+openjdk version "21.0.10" 2026-01-20
+OpenJDK Runtime Environment (build 21.0.10+7-Ubuntu-124.04)
+OpenJDK 64-Bit Server VM (build 21.0.10+7-Ubuntu-124.04, mixed mode, sharing)
+Linux 6.18.44-fc-v80 x86_64
+model name	: Intel(R) Xeon(R) Processor @ 2.10GHz
+1
+MemTotal:        4095296 kB
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"

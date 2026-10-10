@@ -1,0 +1,8 @@
+Publication experiment: trials=5000 maxSpins=1000000
+Java=21.0.10 vm=OpenJDK 64-Bit Server VM os=Linux arch=amd64 cpus=1
+PlainBox (UNSAFE: data race)                         ok=5000 stale=0 notSeen=0 total=5000
+VolatileFlagBox (safe: volatile flag edge)           ok=5000 stale=0 notSeen=0 total=5000
+SynchronizedBox (safe: monitor unlock/lock edge)     ok=5000 stale=0 notSeen=0 total=5000
+CHECK PASSED: no safe box showed a stale payload (this is consistent with, not proof of, the JLS guarantee).
+NOTE: PlainBox stale=0 does NOT mean PlainBox is safe; see class Javadoc.
+exit=0

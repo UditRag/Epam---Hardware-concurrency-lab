@@ -1,0 +1,4 @@
+First CAS: true
+Value: 10
+Second CAS: false
+Value: 10

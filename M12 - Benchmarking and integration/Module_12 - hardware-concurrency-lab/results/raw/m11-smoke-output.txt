@@ -1,0 +1,1 @@
+SMOKE PASS: FIFO/full/empty + 1,000,000 SPSC events, exact order, no timeout.

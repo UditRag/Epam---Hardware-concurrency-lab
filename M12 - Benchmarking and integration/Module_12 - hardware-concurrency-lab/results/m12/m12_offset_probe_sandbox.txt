@@ -1,0 +1,128 @@
+### JVM flag: -Dm12=default
+java.vm=OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-124.04 os=Linux amd64 args=[-Dm12=default]
+--- SpscRingBuffer (fields sorted by actual offset) ---
+  off= 12  int      mask
+  off= 16  long     producerSequence
+  off= 24  long     consumerSequence
+  off= 32  Object[] entries
+  producerSequence<->consumerSequence distance = 8 bytes -> <64: may share a cache line
+--- PaddedSpscRingBuffer (fields sorted by actual offset) ---
+  off= 12  int      mask
+  off= 16  long     p1
+  off= 24  long     p2
+  off= 32  long     p3
+  off= 40  long     p4
+  off= 48  long     p5
+  off= 56  long     p6
+  off= 64  long     p7
+  off= 72  long     producerSequence
+  off= 80  long     q1
+  off= 88  long     q2
+  off= 96  long     q3
+  off=104  long     q4
+  off=112  long     q5
+  off=120  long     q6
+  off=128  long     q7
+  off=136  long     c1
+  off=144  long     c2
+  off=152  long     c3
+  off=160  long     c4
+  off=168  long     c5
+  off=176  long     c6
+  off=184  long     c7
+  off=192  long     consumerSequence
+  off=200  long     r1
+  off=208  long     r2
+  off=216  long     r3
+  off=224  long     r4
+  off=232  long     r5
+  off=240  long     r6
+  off=248  long     r7
+  off=256  Object[] entries
+  producerSequence<->consumerSequence distance = 120 bytes -> >=64: guaranteed different 64B lines (if line size is 64)
+### JVM flag: -XX:-UseCompressedOops
+java.vm=OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-124.04 os=Linux amd64 args=[-XX:-UseCompressedOops]
+--- SpscRingBuffer (fields sorted by actual offset) ---
+  off= 12  int      mask
+  off= 16  long     producerSequence
+  off= 24  long     consumerSequence
+  off= 32  Object[] entries
+  producerSequence<->consumerSequence distance = 8 bytes -> <64: may share a cache line
+--- PaddedSpscRingBuffer (fields sorted by actual offset) ---
+  off= 12  int      mask
+  off= 16  long     p1
+  off= 24  long     p2
+  off= 32  long     p3
+  off= 40  long     p4
+  off= 48  long     p5
+  off= 56  long     p6
+  off= 64  long     p7
+  off= 72  long     producerSequence
+  off= 80  long     q1
+  off= 88  long     q2
+  off= 96  long     q3
+  off=104  long     q4
+  off=112  long     q5
+  off=120  long     q6
+  off=128  long     q7
+  off=136  long     c1
+  off=144  long     c2
+  off=152  long     c3
+  off=160  long     c4
+  off=168  long     c5
+  off=176  long     c6
+  off=184  long     c7
+  off=192  long     consumerSequence
+  off=200  long     r1
+  off=208  long     r2
+  off=216  long     r3
+  off=224  long     r4
+  off=232  long     r5
+  off=240  long     r6
+  off=248  long     r7
+  off=256  Object[] entries
+  producerSequence<->consumerSequence distance = 120 bytes -> >=64: guaranteed different 64B lines (if line size is 64)
+### JVM flag: -XX:-UseCompressedClassPointers
+java.vm=OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-124.04 os=Linux amd64 args=[-XX:-UseCompressedClassPointers]
+--- SpscRingBuffer (fields sorted by actual offset) ---
+  off= 16  long     producerSequence
+  off= 24  long     consumerSequence
+  off= 32  int      mask
+  off= 36  Object[] entries
+  producerSequence<->consumerSequence distance = 8 bytes -> <64: may share a cache line
+--- PaddedSpscRingBuffer (fields sorted by actual offset) ---
+  off= 16  long     p1
+  off= 24  long     p2
+  off= 32  long     p3
+  off= 40  long     p4
+  off= 48  long     p5
+  off= 56  long     p6
+  off= 64  long     p7
+  off= 72  long     producerSequence
+  off= 80  long     q1
+  off= 88  long     q2
+  off= 96  long     q3
+  off=104  long     q4
+  off=112  long     q5
+  off=120  long     q6
+  off=128  long     q7
+  off=136  long     c1
+  off=144  long     c2
+  off=152  long     c3
+  off=160  long     c4
+  off=168  long     c5
+  off=176  long     c6
+  off=184  long     c7
+  off=192  long     consumerSequence
+  off=200  long     r1
+  off=208  long     r2
+  off=216  long     r3
+  off=224  long     r4
+  off=232  long     r5
+  off=240  long     r6
+  off=248  long     r7
+  off=256  int      mask
+  off=260  Object[] entries
+  producerSequence<->consumerSequence distance = 120 bytes -> >=64: guaranteed different 64B lines (if line size is 64)
+      int ObjectAlignmentInBytes                   = 8                              {product lp64_product} {default}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}

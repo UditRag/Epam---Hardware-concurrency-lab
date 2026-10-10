@@ -1,0 +1,11 @@
+Invariant check: 2000000 random operations per protocol, 4 caches, seed 42
+
+[MESI] reads=999302 writes=800994 evictions=199704
+  state occupancy (cache-samples):  M=1001040  O=0  E=18410  S=2249992  I=4730558
+  RESULT: PASS (no invariant violated)
+
+[MOESI] reads=999302 writes=800994 evictions=199704
+  state occupancy (cache-samples):  M=1001040  O=880531  E=18410  S=1369461  I=4730558
+  RESULT: PASS (no invariant violated)
+
+ALL CHECKS PASSED

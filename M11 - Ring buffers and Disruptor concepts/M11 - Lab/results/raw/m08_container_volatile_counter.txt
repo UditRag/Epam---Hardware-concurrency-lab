@@ -1,0 +1,8 @@
+Java=21.0.10 vm=OpenJDK 64-Bit Server VM os=Linux arch=amd64 cpus=1
+Part 1 (deterministic, barrier-forced interleaving): two increments on volatile 0 -> 1 (atomic would be 2)
+Part 2 (statistical): threads=8 iterations=200000 expected=1600000 repetitions=10
+VolatileCounter    (volatile, non-atomic ++) incorrect=0/10 worstLoss=0
+SynchronizedCounter (monitor)              incorrect=0/10 worstLoss=0
+AtomicCounter       (AtomicInteger)        incorrect=0/10 worstLoss=0
+NOTE: 'incorrect=0' for VolatileCounter would NOT show it is safe; the barrier demo in Part 1 does.
+exit=0

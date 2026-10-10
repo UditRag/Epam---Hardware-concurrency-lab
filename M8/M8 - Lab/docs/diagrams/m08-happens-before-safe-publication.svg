@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <title>Module 08: happens-before edge in volatile-flag safe publication</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1a7f37"/></marker>
+  </defs>
+  <rect width="760" height="360" fill="#ffffff"/>
+  <text x="380" y="24" text-anchor="middle" font-size="16" font-weight="bold">Safe publication via a volatile flag (JLS 17.4.4 / 17.4.5)</text>
+  <text x="140" y="56" text-anchor="middle" font-weight="bold">Writer thread</text>
+  <text x="620" y="56" text-anchor="middle" font-weight="bold">Reader thread</text>
+  <rect x="50" y="80" width="180" height="46" fill="#eef3fb" stroke="#333"/><text x="140" y="108" text-anchor="middle">(1) data = 42  (plain write)</text>
+  <rect x="50" y="200" width="180" height="46" fill="#fdecc8" stroke="#333"/><text x="140" y="228" text-anchor="middle">(2) ready = true  (volatile write)</text>
+  <rect x="530" y="200" width="180" height="46" fill="#fdecc8" stroke="#333"/><text x="620" y="228" text-anchor="middle">(3) read ready == true  (volatile read)</text>
+  <rect x="530" y="290" width="180" height="46" fill="#eef3fb" stroke="#333"/><text x="620" y="318" text-anchor="middle">(4) read data  (plain read)</text>
+  <line x1="140" y1="126" x2="140" y2="198" stroke="#333" stroke-width="2" marker-end="url(#a)"/><text x="150" y="168" fill="#333">program order (po)</text>
+  <line x1="620" y1="246" x2="620" y2="288" stroke="#333" stroke-width="2" marker-end="url(#a)"/><text x="630" y="272" fill="#333">po</text>
+  <line x1="230" y1="223" x2="528" y2="223" stroke="#1a7f37" stroke-width="3" marker-end="url(#g)"/><text x="380" y="214" text-anchor="middle" fill="#1a7f37" font-weight="bold">synchronizes-with (sw)</text>
+  <text x="380" y="242" text-anchor="middle" fill="#1a7f37">only if (3) reads the value written by (2)</text>
+  <path d="M230,103 C400,100 420,300 528,313" fill="none" stroke="#1a7f37" stroke-width="2" stroke-dasharray="7,5" marker-end="url(#g)"/>
+  <text x="402" y="148" fill="#1a7f37">hb(1,4) by po + sw + po (transitivity)</text>
+  <text x="380" y="352" text-anchor="middle" fill="#555" font-size="12">Language-level relation. It says what (4) may see; it is NOT a timeline of CPU events or instructions.</text>
+</svg>

@@ -1,0 +1,18 @@
+PASS memorymodel.PublicationTest.singleThreadedWriteThenReadSeesPayload #1
+PASS memorymodel.PublicationTest.readBeforeWriteReturnsNotSeen #1
+PASS memorymodel.PublicationTest.volatileFlagBoxNeverShowsStalePayload #1
+PASS memorymodel.PublicationTest.volatileFlagBoxNeverShowsStalePayload #2
+PASS memorymodel.PublicationTest.volatileFlagBoxNeverShowsStalePayload #3
+PASS memorymodel.PublicationTest.synchronizedBoxNeverShowsStalePayload #1
+PASS memorymodel.PublicationTest.synchronizedBoxNeverShowsStalePayload #2
+PASS memorymodel.PublicationTest.synchronizedBoxNeverShowsStalePayload #3
+[PlainBox] ok=2000 stale=0 notSeen=0
+PASS memorymodel.PublicationTest.plainBoxResultsAreAccountedFor #1
+[Volatile] expected=800000 actual=800000 lost=0
+PASS memorymodel.VolatileCounterTest.volatileCounterUnderContentionStaysInSaneRange #1
+PASS memorymodel.VolatileCounterTest.deterministicInterleavingLosesAnUpdateEvenThoughFieldIsVolatile #1
+PASS memorymodel.VolatileCounterTest.synchronizedAndAtomicContrastAreExact #1
+PASS memorymodel.VolatileCounterTest.synchronizedAndAtomicContrastAreExact #2
+PASS memorymodel.VolatileCounterTest.synchronizedAndAtomicContrastAreExact #3
+PASS memorymodel.VolatileCounterTest.singleThreadedVolatileIncrementIsExact #1
+pass=15 fail=0

@@ -1,0 +1,7 @@
+benchmark,impl,capacity,producers,consumers,warmup_iters,measure_iters,forks,jdk,os,cpu,unit,throughput_ops_s,notes
+spscPlain,SpscRingBuffer,64,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,PENDING LOCAL EXECUTION
+spscPlain,SpscRingBuffer,1024,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,PENDING LOCAL EXECUTION
+spscPadded,PaddedSpscRingBuffer,64,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,PENDING LOCAL EXECUTION
+spscPadded,PaddedSpscRingBuffer,1024,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,PENDING LOCAL EXECUTION
+abqBaseline,ArrayBlockingQueue,64,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,Non-SPSC baseline; different backpressure. PENDING LOCAL EXECUTION
+abqBaseline,ArrayBlockingQueue,1024,1,1,5,5,3,PENDING,PENDING,PENDING,ops/s,PENDING,Non-SPSC baseline; different backpressure. PENDING LOCAL EXECUTION
